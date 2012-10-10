@@ -14,4 +14,11 @@ Then /^I should see "(.*?)" image on the page$/ do |content|
   end
 end
 
+When /^I click "(.*)" link$/ do |link|
+  click_link link
+end
+
+Then /^I should see "(.*?)" page$/ do |page|
+  page.should have_content(page)
+end
 
