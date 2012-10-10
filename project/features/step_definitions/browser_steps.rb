@@ -3,7 +3,7 @@ Given /^opened "(.*?)" page$/ do |url|
   sleep (5)
 end
 
-When /^I should see "(.*?)" link$/ do |link|
+Then /^I should see "(.*?)" link$/ do |link|
     page.should have_link(link)
 end
 
