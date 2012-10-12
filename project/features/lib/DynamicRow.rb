@@ -3,7 +3,7 @@ class DynamicRow
 
   def initialize
    @elements_xpath = "//div[contains(@class, 'listRow')]"
-   @all_titles = "@elements_xpath//h3/a"
+   @all_titles = "#{@elements_xpath}//h3"
   end
                             #or
   #def initialize (elements_xpath = "//div[contains(@class, 'listingsRow')]")

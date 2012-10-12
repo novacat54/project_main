@@ -6,7 +6,9 @@ Feature: ListRow
     #Then I should see "Showcase" page
     #When I click "Entertainment" link
     #When I click "RegressionPack List Row (DO NOT TOUCH!)" link
-    Then I should see "List Row" title on page
-    Then I should see 4 "Videos" quantity on page
-    Then I should see "REG-Sri Lanka v Pakistan" link on page
-    Then I should see "REG-Sri Lanka v Pakistan" image on page
+    Then I should see "List Row" on the page
+    Then I should see 4 "Videos" on the page
+    Then I want to get all content names for "List Row"
+    Then I should see "REG-Sri Lanka v Pakistan" title presented in "List" row
+    Then I should see image for "REG-Sri Lanka v Pakistan" content in "List" row
+

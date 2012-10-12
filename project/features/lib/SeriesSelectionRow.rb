@@ -16,7 +16,7 @@ class SeriesSelectionRow
     @image_xpath= "#{@name_element_xpath}/preceding-sibling::img"
   end
 
-  def get_name_of_elements(name)
+  def get_name_of_element(name)
      @name_element_xpath= "#{@base_xpath}//h3[a[contains(@title,'#{name}')]]"
   end
 
