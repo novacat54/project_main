@@ -3,12 +3,11 @@ Feature: Testing open web page
 
   Scenario: Opening page
 
-    Given opened "http://sky.com" page
-    Then I should see "My Sky" link
-    When I click "My Sky" link
-    Then I should see "Welcome to My Sky" page
-    Given opened "http://go.test.sp.bskyb.com/vod/content/SKYMOVIES/content/videoId/cf5f8d1dc26b9210VgnVCM1000002c04170a________/content/default/videoDetailsPage.do" page
-    Then I should see image "I Love You Phillip Morris" title on page
+    Given opened "http://go.test.sp.bskyb.com/vod/content/SKYDOCUMENTARIES/Browse_by_Genre/RegressionPack_Dynamic_Row_%28DO_NOT_TOUCH%21%29/content/default/promoPage.do" page
+     Then I should see "Dynamic Row" content title on the page
+     Then I should see 12 "Video" on the page
+     Then I should see "24/24 Rule" link on the page
+     Then I should see image of "24/24 Rule" title on the page
 
 
 
