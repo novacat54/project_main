@@ -1,8 +1,9 @@
 $LOAD_PATH << '.'
 require './features/lib/ListRow'
+require './features/lib/SeriesSelectionRow'
+require './features/lib/DynamicRow'
 require 'capybara/cucumber'
-$LOAD_PATH << '.'
- './features/lib/test'
+
 
 Capybara.register_driver :firefox do |app|
   Capybara::Selenium::Driver.new(app)
