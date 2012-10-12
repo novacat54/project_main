@@ -1,3 +1,5 @@
+$LOAD_PATH << '.'
+require './features/lib/ListRow'
 require 'capybara/cucumber'
 
 Capybara.register_driver :firefox do |app|
