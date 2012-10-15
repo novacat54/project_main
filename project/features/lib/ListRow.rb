@@ -5,15 +5,15 @@ class ListRow
     @all_names="#{@main_xpath}//h3"
   end
 
-  def page_name (title)
+  def content_title (title)
      page_name_xpath= "//div[contains(@class,'listingsRow')]/h2[text()='#{title}']"
   end
 
-  def items_number
+  def number_of_items
     counting_xpath="#{@main_xpath}/div[@class]"
   end
 
-  def item_link (link)
+  def get_name_of_elements (link)
      item_link_xpath="//div[@class='promoItem odd']/h3[a/span[@title='#{link}']]"
   end
 

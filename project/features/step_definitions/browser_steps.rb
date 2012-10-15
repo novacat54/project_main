@@ -17,19 +17,18 @@ end
 
 Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
   case name
-    when 'Series'
-      page.all(:xpath, @series.counting_xpath).length.should == number.to_i
-
+    when 'Series Row'
+      page.all(:xpath, @series.number_of_items).length.should == number.to_i
 
     #what is the difference for Video and Videos? You should manage by content type, not different words
-    when 'Video'
-      page.all(:xpath, @dynamic.numbers_of_video).length.should == number.to_i
+    when 'Dynamic Row'
+      page.all(:xpath, @dynamic.number_of_items).length.should == number.to_i
 
-    when 'Videos'
-      page.all(:xpath, @list_row.items_number).length.should == number.to_i
+    when 'List Row'
+      page.all(:xpath, @list_row.number_of_items).length.should == number.to_i
 
-    when 'HeroRow'
-      page.all(:xpath, @hero.numbers_of_video).length.should == number.to_i
+    when 'Hero Row'
+      page.all(:xpath, @hero.number_of_items).length.should == number.to_i
   end
 end
 
@@ -38,27 +37,27 @@ Then /^I should see "(.*?)" on the page$/ do |name|
   case name
     when 'Series Selection Row'
       @series=SeriesSelectionRow.new
-      page.should have_selector(:xpath, @series.xpath_of_elements(1))
+      page.should have_selector(:xpath, @series.content_title(1))
     when 'Dynamic Row'
       @dynamic=DynamicRow.new
       page.should have_selector(:xpath, @dynamic.content_title(name))
     when 'List Row'
       @list_row=ListRow.new
-      page.should have_selector(:xpath, @list_row.page_name(name))
+      page.should have_selector(:xpath, @list_row.content_title(name))
   end
 end
 
 Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
   case row_type
-    when 'Series Selection'
-      page.should have_selector(:xpath, @series.get_name_of_element(title))
-    when 'Dynamic'
-      page.should have_selector(:xpath, @dynamic.content_link(title))
-    when 'List'
-      page.should have_selector(:xpath, @list_row.item_link(title))
+    when 'Series Selection Row'
+      page.should have_selector(:xpath, @series.get_name_of_elements(title))
+    when 'Dynamic Row'
+      page.should have_selector(:xpath, @dynamic.get_name_of_elements(title))
+    when 'List Row'
+      page.should have_selector(:xpath, @list_row.get_name_of_elements(title))
     when 'Hero Row'
       @hero=HeroRow.new
-      page.should have_selector(:xpath, @hero.view_more_title(title))
+      page.should have_selector(:xpath, @hero.get_number_of_elements(title))
   end
 end
 

@@ -7,7 +7,7 @@ Feature: ListRow
     #When I click "Entertainment" link
     #When I click "RegressionPack List Row (DO NOT TOUCH!)" link
     Then I should see "List Row" on the page
-    Then I should see 4 Videos on the page
+    Then I should see 4 Video on the page
     Then I want to get all content names for List Row
     Then I should see "REG-Sri Lanka v Pakistan" content presented in List Row
     Then I should see image for "REG-Sri Lanka v Pakistan" content in List Row

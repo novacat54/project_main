@@ -16,13 +16,13 @@ class DynamicRow
   end
 
   # counting numbers of video
-  def numbers_of_video
+  def number_of_items
     counting_xpath="#{@elements_xpath}/div[@class]"
   end
 
   #check content link
-  def content_link(link)
-    link_xpath="//div[@class='promoItem odd']/h3[a/span[@title='#{link}']]"
+  def get_name_of_elements(link)
+    link_xpath="//div[contains(@class,'promoItem')]/h3[a/span[@title='#{link}']]"
   end
 
   # check image of video content

@@ -1,7 +1,7 @@
 class HeroRow
 
 #counting a video on Hero Row
-  def numbers_of_video
+  def number_of_items
     counting_xpath="#{@element_xpath}/li[@class]"
   end
 
@@ -17,7 +17,7 @@ class HeroRow
   end
 
   #derived video title name
-  def view_more_title(title)
+  def get_number_of_elements(title)
     content_view= "//div[@class='buttons ']/a[@title='#{title}']"
   end
 
