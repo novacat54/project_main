@@ -17,7 +17,7 @@ class ListRow
      item_link_xpath="//div[@class='promoItem odd']/h3[a/span[@title='#{link}']]"
   end
 
-  def item_image (name)
+  def get_presence_of_image (name)
     @name_element_xpath= "//div[@class='promoItem odd']/h3[contains(@title,'#{name}')]"
     @image_xpath= "#{@name_element_xpath}/preceding-sibling::a/img"
   end

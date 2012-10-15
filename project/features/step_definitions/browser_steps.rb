@@ -66,9 +66,9 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
     when 'Series Selection'
       page.should have_selector(:xpath, @series.get_presence_of_image(title))
     when 'Dynamic'
-      page.should have_selector(:xpath, @dynamic.content_image(title))
+      page.should have_selector(:xpath, @dynamic.get_presence_of_image(title))
     when 'List'
-      page.should have_selector(:xpath, @list_row.item_image(title))
+      page.should have_selector(:xpath, @list_row.get_presence_of_image(title))
   end
 end
 
@@ -80,9 +80,9 @@ Then /^I want to get all content names for (.*?)$/ do |row_type|
     when 'Series Selection Row'
       all(:xpath, @series.all_names).map { |element| p element[:title] }
     when 'Dynamic Row'
-      all(:xpath, @dynamic.all_titles).map { |element| p element[:title] }
+      all(:xpath, @dynamic.all_names).map { |element| p element[:title] }
     when 'List Row'
-      all(:xpath, @list_row.all_names).map { |name| p name[:title] }
+      all(:xpath, @list_row.all_names).map { |element| p element[:title] }
   end
 end
 

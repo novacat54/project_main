@@ -1,9 +1,9 @@
 class DynamicRow
-  attr_accessor :all_titles
+  attr_accessor :all_names
 
   def initialize
    @elements_xpath = "//div[contains(@class, 'listRow')]"
-   @all_titles = "#{@elements_xpath}//h3"
+   @all_names = "#{@elements_xpath}//h3"
   end
                             #or
   #def initialize (elements_xpath = "//div[contains(@class, 'listingsRow')]")
@@ -26,7 +26,7 @@ class DynamicRow
   end
 
   # check image of video content
-  def content_image(name)
+  def get_presence_of_image(name)
   title_xpath= "#{@elements_xpath}//h3[contains(@title,'#{name}')]"
   image_xpath= "#{title_xpath}/preceding-sibling::a/img"
   end
