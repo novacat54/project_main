@@ -16,7 +16,12 @@ Feature: HeroRow
     Then I should see "Showcase" button tab title on the Hero Row
     Then I should see "Watch Live" button tab title on the Hero Row
 
+    # using Hero Row or HeroRow - choose something one
+
+    # Scroll left/right are buttons:
+    # Then I should see "Scroll left" button on the HeroRow
     Then I should see "Scroll left" on the HeroRow
+
     Then I should see "Scroll right" on the HeroRow
     Then I should see "View more Panorama" content presented in HeroRow
 
