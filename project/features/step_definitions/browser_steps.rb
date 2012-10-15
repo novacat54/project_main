@@ -44,7 +44,7 @@ Then /^I should see "(.*?)" on the page$/ do |name|
   end
 end
 
-Then /^I should see "(.*?)" title presented in (.*?)$/ do |title,row_type|
+Then /^I should see "(.*?)" content presented in (.*?)$/ do |title,row_type|
   case row_type
     when 'Series Selection'
       page.should have_selector(:xpath, @series.get_name_of_element(title))

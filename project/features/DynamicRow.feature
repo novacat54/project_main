@@ -7,7 +7,7 @@ Feature: Testing open web page
      Then I should see "Dynamic Row" on the page
      Then I should see 12 Video on the page
      Then I want to get all content names for Dynamic Row
-     Then I should see "24/24 Rule" title presented in Dynamic Row
+     Then I should see "24/24 Rule" content presented in Dynamic Row
      Then I should see image for "24/24 Rule" content in Dynamic Row
 
 
