@@ -16,7 +16,7 @@ Then /^I should see "(.*?)" page$/ do |page|
 end
 
 
-Then /^I should see (\d+) "(.*?)" on the page$/ do |number, name|
+Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
   case name
     when 'Series'
       page.all(:xpath, @series.counting_xpath).length.should == number.to_i
@@ -44,7 +44,7 @@ Then /^I should see "(.*?)" on the page$/ do |name|
   end
 end
 
-Then /^I should see "(.*?)" title presented in "(.*?)" row$/ do |title,row_type|
+Then /^I should see "(.*?)" title presented in (.*?)$/ do |title,row_type|
   case row_type
     when 'Series Selection'
       page.should have_selector(:xpath, @series.get_name_of_element(title))
@@ -55,7 +55,7 @@ Then /^I should see "(.*?)" title presented in "(.*?)" row$/ do |title,row_type|
   end
 end
 
-Then /^I should see image for "(.*?)" content in "(.*?)" row$/ do |title, name|
+Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
   case name
     when 'Series Selection'
       page.should have_selector(:xpath, @series.get_presence_of_image(title))
@@ -67,7 +67,7 @@ Then /^I should see image for "(.*?)" content in "(.*?)" row$/ do |title, name|
 end
 
 
-Then /^I want to get all content names for "(.*?)"$/ do |row_type|
+Then /^I want to get all content names for (.*?)$/ do |row_type|
   case row_type
     when 'Series Selection Row'
       all(:xpath, @series.all_names).map{|element| p element[:title]}
