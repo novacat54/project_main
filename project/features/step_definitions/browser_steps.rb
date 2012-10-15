@@ -26,8 +26,12 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
 
     when 'Videos'
       page.all(:xpath, @list_row.items_number).length.should == number.to_i
+
+    when 'HeroRow'
+      page.all(:xpath, @hero.numbers_of_video).length.should == number.to_i
   end
 end
+
 
 
 Then /^I should see "(.*?)" on the page$/ do |name|
@@ -52,6 +56,9 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title,row_type|
       page.should have_selector(:xpath, @dynamic.content_link(title))
     when 'List'
     page.should have_selector(:xpath, @list_row.item_link(title))
+    when 'Hero Row'
+      @hero=HeroRow.new
+      page.should have_selector(:xpath, @hero.view_more_title(title))
   end
 end
 
@@ -78,4 +85,12 @@ Then /^I want to get all content names for (.*?)$/ do |row_type|
   end
 end
 
+  Then /^I should see "(.*?)" button tab title on the Hero Row$/ do |title|
+    @hero=HeroRow.new
+ page.should have_selector(:xpath, @hero.content_title(title))
+  end
+
+  Then /^I should see "(.*?)" on the HeroRow$/ do |scroll|
+    page.should have_selector(:xpath, @hero.scroll_button(scroll))
+  end
 
