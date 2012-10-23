@@ -26,7 +26,7 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
 
     when 'List Row'
       page.all(:xpath, @list_row.number_of_items).length.should == number.to_i
-
+    @hero=HeroRow.new
     when 'Hero Row'
       page.all(:xpath, @hero.number_of_items).length.should == number.to_i
   end
@@ -55,9 +55,6 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
       page.should have_selector(:xpath, @dynamic.get_name_of_elements(title))
     when 'List Row'
       page.should have_selector(:xpath, @list_row.get_name_of_elements(title))
-    when 'Hero Row'
-      @hero=HeroRow.new
-      page.should have_selector(:xpath, @hero.get_number_of_elements(title))
   end
 end
 
@@ -86,12 +83,26 @@ Then /^I want to get all content names for (.*?)$/ do |row_type|
   end
 end
 
-Then /^I should see "(.*?)" button tab title on the Hero Row$/ do |title|
-  @hero=HeroRow.new
-  page.should have_selector(:xpath, @hero.content_title(title))
+Then /^I should see the following button tabs title on the Hero Row:$/ do |table|
+  p table
+  table.raw.each do |title|
+    page.should have_selector(:xpath, HeroRow.new.content_title(title[0]) )
+  end
 end
 
-Then /^I should see "(.*?)" on the HeroRow$/ do |scroll|
-  page.should have_selector(:xpath, @hero.scroll_button(scroll))
+Then /^I should see scroll buttons on the Hero row:$/ do |table|
+  p table
+  table.raw.each do |scroll|
+    page.should have_selector(:xpath, HeroRow.new.scroll_button(scroll[0]))
+  end
 end
+
+Then /^I should see view more content presented in the Hero Row:$/  do |table|
+  p table
+  table.raw.each do |title|
+    page.should have_selector(:xpath, HeroRow.new.get_number_of_elements(title[0]))
+  end
+end
+
+
 

@@ -12,18 +12,25 @@ Feature: HeroRow
   #      | Showcase    |
   #      | Watch Live  |
   #      | Last Chance |
-    Then I should see "Last Chance" button tab title on the Hero Row
-    Then I should see "Showcase" button tab title on the Hero Row
-    Then I should see "Watch Live" button tab title on the Hero Row
-
+    Then I should see the following button tabs title on the Hero Row:
+      | Showcase    |
+      | Last Chance |
+      | Watch Live  |
+    Then I should see scroll buttons on the Hero row:
+      |Scroll left|
+      |Scroll right|
     # using Hero Row or HeroRow - choose something one
 
     # Scroll left/right are buttons:
     # Then I should see "Scroll left" button on the HeroRow
-    Then I should see "Scroll left" on the HeroRow
-
-    Then I should see "Scroll right" on the HeroRow
-    Then I should see "View more Panorama" content presented in HeroRow
+    Then I should see view more content presented in the Hero Row:
+     |View more HARDtalk                    |
+     |View more Click                       |
+     |View more Sky World News              |
+     |View more Question Time               |
+     |View more Panorama                    |
+     |View more Series-2012091245           |
+     |View more Bolton &amp; Co-201209140903|
 
 
 
