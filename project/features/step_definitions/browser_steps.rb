@@ -72,14 +72,14 @@ end
 # Denis created step just for self-learning, you all copied it and didn't finish it as was expected.
 # Task was to get array of movie names and check if it contains expected movie name.
 # What is the sens of your step?
-Then /^I want to get all content names for (.*?)$/ do |row_type|
+Then /^I want to get array of movie names for (.*?) and check if it contains "(.*?)"$/ do |row_type, name|
   case row_type
     when 'Series Selection Row'
-      all(:xpath, @series.all_names).map { |element| p element[:title] }
+      @series.get_movie_names.join(";").should have_content(name)
     when 'Dynamic Row'
-      all(:xpath, @dynamic.all_names).map { |element| p element[:title] }
+      @dynamic.get_movie_names.join(";").should have_content(name)
     when 'List Row'
-      all(:xpath, @list_row.all_names).map { |element| p element[:title] }
+      @list_row.get_movie_names.join(";").should have_content(name)
   end
 end
 

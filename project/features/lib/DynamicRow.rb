@@ -31,4 +31,10 @@ class DynamicRow
   image_xpath= "#{title_xpath}/preceding-sibling::a/img"
   end
 
+  def get_movie_names
+    movies = []
+    Capybara.page.all(:xpath, @all_names).map { |element| movies << element[:title] }
+    return movies
+  end
+
 end

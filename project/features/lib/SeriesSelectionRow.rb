@@ -20,5 +20,11 @@ class SeriesSelectionRow
      @name_element_xpath= "#{@base_xpath}//h3[a[contains(@title,'#{name}')]]"
   end
 
+   def get_movie_names
+     movies = []
+     Capybara.page.all(:xpath, @all_names).map { |element| movies << element[:title] }
+     return movies
+   end
+
 end
 
