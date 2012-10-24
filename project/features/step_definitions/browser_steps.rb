@@ -21,7 +21,7 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
       @series.number_of_items.should == number.to_i
 
     when 'Dynamic Row'
-      page.all(:xpath, @dynamic.number_of_items).length.should == number.to_i
+      @dynamic.number_of_items.should == number.to_i
 
     when 'List Row'
       @list_row.number_of_items.should == number.to_i
@@ -39,7 +39,7 @@ Then /^I should see "(.*?)" on the page$/ do |name|
       @series.content_title(1)
     when 'Dynamic Row'
       @dynamic=DynamicRow.new
-      page.should have_selector(:xpath, @dynamic.content_title(name))
+      @dynamic.content_title
     when 'List Row'
       @list_row=ListRow.new
       @list_row.content_title(1)
@@ -51,7 +51,7 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
     when 'Series Selection Row'
       @series.get_name_of_elements(title)
     when 'Dynamic Row'
-      page.should have_selector(:xpath, @dynamic.get_name_of_elements(title))
+      @dynamic.get_name_of_elements(title)
     when 'List Row'
       @list_row.get_name_of_elements(title)
   end
@@ -61,8 +61,8 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
   case name
     when 'Series Selection Row'
       @series.get_presence_of_image(title)
-    when 'Dynamic'
-      page.should have_selector(:xpath, @dynamic.get_presence_of_image(title))
+    when 'Dynamic Row'
+      @dynamic.get_presence_of_image(title)
     when 'List Row'
       @list_row.get_presence_of_image(title)
   end
@@ -74,7 +74,7 @@ Then /^I want to get array of movie names for (.*?) and check if it contains "(.
     when 'Series Selection Row'
       @series.get_movie_names.should include(name)
     when 'Dynamic Row'
-      @dynamic.get_movie_names.join(";").should have_content(name)
+      @dynamic.get_movie_names.should include(name)
     when 'List Row'
       @list_row.get_movie_names.should include(name)
   end
