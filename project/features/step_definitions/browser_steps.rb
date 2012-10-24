@@ -18,9 +18,8 @@ end
 Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
   case name
     when 'Series Row'
-      page.all(:xpath, @series.number_of_items).length.should == number.to_i
+      @series.number_of_items.should == number.to_i
 
-    #what is the difference for Video and Videos? You should manage by content type, not different words
     when 'Dynamic Row'
       page.all(:xpath, @dynamic.number_of_items).length.should == number.to_i
 
@@ -37,7 +36,7 @@ Then /^I should see "(.*?)" on the page$/ do |name|
   case name
     when 'Series Selection Row'
       @series=SeriesSelectionRow.new
-      page.should have_selector(:xpath, @series.content_title(1))
+      @series.content_title(1)
     when 'Dynamic Row'
       @dynamic=DynamicRow.new
       page.should have_selector(:xpath, @dynamic.content_title(name))
@@ -50,7 +49,7 @@ end
 Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
   case row_type
     when 'Series Selection Row'
-      page.should have_selector(:xpath, @series.get_name_of_elements(title))
+      @series.get_name_of_elements(title)
     when 'Dynamic Row'
       page.should have_selector(:xpath, @dynamic.get_name_of_elements(title))
     when 'List Row'
@@ -60,8 +59,8 @@ end
 
 Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
   case name
-    when 'Series Selection'
-      page.should have_selector(:xpath, @series.get_presence_of_image(title))
+    when 'Series Selection Row'
+      @series.get_presence_of_image(title)
     when 'Dynamic'
       page.should have_selector(:xpath, @dynamic.get_presence_of_image(title))
     when 'List'
@@ -69,13 +68,11 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
   end
 end
 
-# Denis created step just for self-learning, you all copied it and didn't finish it as was expected.
-# Task was to get array of movie names and check if it contains expected movie name.
-# What is the sens of your step?
+
 Then /^I want to get array of movie names for (.*?) and check if it contains "(.*?)"$/ do |row_type, name|
   case row_type
     when 'Series Selection Row'
-      @series.get_movie_names.join(";").should have_content(name)
+      @series.get_movie_names.should include(name)
     when 'Dynamic Row'
       @dynamic.get_movie_names.join(";").should have_content(name)
     when 'List Row'
