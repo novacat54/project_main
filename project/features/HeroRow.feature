@@ -5,32 +5,21 @@ Feature: HeroRow
     Given opened "http://go.test.sp.bskyb.com/vod/content/SKYNEWS/content/default/promoPage.do" page
 
     Then I should see 8 "Video" on the page
-
-  #    'button tab title' is a simple tab
-  #    more correct step is: Then I should see "Showcase" tab on the Hero Row
-  #    but use next step: Then I should see next tabs for Hero Row:
-  #      | Showcase    |
-  #      | Watch Live  |
-  #      | Last Chance |
-    Then I should see the following button tabs title on the Hero Row:
+    Then I should see the following tabs title on the Hero Row:
       | Showcase    |
       | Last Chance |
       | Watch Live  |
-    Then I should see scroll buttons on the Hero row:
+    Then I should see scroll buttons on the Hero Row:
       |Scroll left|
       |Scroll right|
-    # using Hero Row or HeroRow - choose something one
-
-    # Scroll left/right are buttons:
-    # Then I should see "Scroll left" button on the HeroRow
-    Then I should see view more content presented in the Hero Row:
-     |View more HARDtalk                    |
-     |View more Click                       |
-     |View more Sky World News              |
-     |View more Question Time               |
-     |View more Panorama                    |
-     |View more Series-2012091245           |
-     |View more Bolton &amp; Co-201209140903|
+    Then I should see view more content presented on the Hero Row:
+      |View more HARDtalk                       |
+      |View more Click                          |
+      |View more Sky World News                 |
+      |View more Question Time                  |
+      |View more Panorama                       |
+      |View more Series-2012091245              |
+      |View more Bolton &amp; Co-201209140903   |
 
 
 

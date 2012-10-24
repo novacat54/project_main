@@ -80,26 +80,37 @@ Then /^I want to get array of movie names for (.*?) and check if it contains "(.
   end
 end
 
-Then /^I should see the following button tabs title on the Hero Row:$/ do |table|
-  p table
-  table.raw.each do |title|
-    page.should have_selector(:xpath, HeroRow.new.content_title(title[0]) )
+Then /^I should see the following tabs title on the (.*?):$/ do |name, table|
+  case name
+    when "Hero Row"
+      table.raw.each do |title|
+        @hero=HeroRow.new
+        @hero.content_title.should include(title.join)
+      end
   end
 end
 
-Then /^I should see scroll buttons on the Hero row:$/ do |table|
-  p table
-  table.raw.each do |scroll|
-    page.should have_selector(:xpath, HeroRow.new.scroll_button(scroll[0]))
+Then /^I should see scroll buttons on the (.*?):$/ do |name, table|
+  case name
+    when "Hero Row"
+      table.raw.each do |title|
+        @hero.scroll_button.should include(title.join)
+      end
   end
 end
 
-Then /^I should see view more content presented in the Hero Row:$/  do |table|
-  p table
-  table.raw.each do |title|
-    page.should have_selector(:xpath, HeroRow.new.get_number_of_elements(title[0]))
+Then /^I should see view more content presented on the (.*?):$/  do |name, table|
+  case name
+    when "Hero Row"
+      @hero=HeroRow.new
+      table.raw.each do |title|
+        @hero.get_movies.should include(title.join)
+      end
   end
 end
+
+
+
 
 
 
