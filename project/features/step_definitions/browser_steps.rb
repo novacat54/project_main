@@ -36,13 +36,13 @@ Then /^I should see "(.*?)" on the page$/ do |name|
   case name
     when 'Series Selection Row'
       @series=SeriesSelectionRow.new
-      @series.content_title(1)
+      @series.content_title
     when 'Dynamic Row'
       @dynamic=DynamicRow.new
       @dynamic.content_title
     when 'List Row'
       @list_row=ListRow.new
-      @list_row.content_title(1)
+      @list_row.content_title
   end
 end
 
