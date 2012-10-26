@@ -49,22 +49,22 @@ end
 Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
   case row_type
     when 'Series Selection Row'
-      @series.get_name_of_elements(title)
+      @series.get_name_of_elements(title).should be_true
     when 'Dynamic Row'
-      @dynamic.get_name_of_elements(title)
+      @dynamic.get_name_of_elements(title).should be_true
     when 'List Row'
-      @list_row.get_name_of_elements(title)
+      @list_row.get_name_of_elements(title).should be_true
   end
 end
 
 Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
   case name
     when 'Series Selection Row'
-      @series.get_presence_of_image(title)
+      @series.is_image_present(title).should be_true
     when 'Dynamic Row'
-      @dynamic.get_presence_of_image(title)
+      @dynamic.is_image_present(title).should be_true
     when 'List Row'
-      @list_row.get_presence_of_image(title)
+      @list_row.is_image_present(title).should be_true
   end
 end
 

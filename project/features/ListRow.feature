@@ -1,14 +1,16 @@
-Feature: ListRow
-  Scenario: open web site and check List row
 
-    Given opened "http://go.test.sp.bskyb.com/vod/content/SKYENTERTAINMENT/Browse_by_Genre/RegressionPack_List_Row_%28DO_NOT_TOUCH!%29/content/default/promoPage.do" page
-    #When I click "On Demand" link
-    #Then I should see "Showcase" page
-    #When I click "Entertainment" link
-    #When I click "RegressionPack List Row (DO NOT TOUCH!)" link
-    Then I should see "List Row" on the page
-    Then I should see 4 List Row on the page
-    Then I want to get array of movie names for List Row and check if it contains "REG-Sri Lanka v Pakistan"
-    Then I should see "REG-Sri Lanka v Pakistan" content presented in List Row
-    Then I should see image for "REG-Sri Lanka v Pakistan" content in List Row
+Feature: Testing Series Selection Row
+
+  Scenario: Opening page, and trying to find the elements
+
+    Given opened "http://go.test.sp.bskyb.com/vod/content/SKYKIDS/Browse_by_Genre/RegressionPack_Series_Selection_Row_%28DO_NOT_TOUCH!%29/content/default/promoPage.do" page
+    Then I should see "Series Selection Row" on the page
+    Then I should see 7 Series Row on the page
+    Then I want to get array of movie names for Series Selection Row and check if it contains "Sel Disney Jr Series2"
+    Then I should see "Sel Cartoon Network Series1" content presented in Series Selection Row
+    Then I should see image for "Sel Cartoon Network Series1" content in Series Selection Row
+    When I click "Jungle Bunnies" link
+    Then I should see "Jungle Bunnies" page
+
+
 

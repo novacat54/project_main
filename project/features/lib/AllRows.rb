@@ -2,9 +2,10 @@ class AllRows
 
   include RSpec::Matchers
 
-  def initialize (main_xpath, all_names)
-    @main_xpath = main_xpath
-    @all_names = all_names
+  def initialize
+    @main_xpath = ''
+    @all_names = ''
+    @name_element_xpath = ''
   end
 
   def number_of_items
@@ -20,6 +21,15 @@ class AllRows
 
   def content_title
     Capybara.page.should have_selector(:xpath, @main_xpath)
+  end
+
+  def is_image_present(name)
+    image_xpath= "#{@name_element_xpath}[descendant-or-self::*[contains(@title,'#{name}')]]/preceding-sibling::*[descendant-or-self::img]"
+    return Capybara.page.should have_selector(:xpath, image_xpath)
+  end
+
+  def get_name_of_elements(name)
+    return Capybara.page.should have_selector(:xpath, "#{@name_element_xpath}[descendant-or-self::*[contains(@title,'#{name}')]]")
   end
 
 end
