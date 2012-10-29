@@ -32,6 +32,10 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
     when 'Hero Row'
       @hero=HeroRow.new
       @hero.number_of_items.should == number.to_i
+
+    when 'Arts'
+      @arts=Arts.new
+      @arts.number_of_items.should == number.to_i
   end
 end
 
@@ -50,19 +54,24 @@ Then /^I should see "(.*?)" on the page$/ do |name|
     when 'Sci Fi'
       @sci_fi=SciFi.new
       @sci_fi.content_title
+    when 'Arts'
+      @arts=Arts.new
+      @arts.content_title
   end
 end
 
 Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
   case row_type
     when 'Series Selection Row'
-      @series.get_name_of_elements(title).should be_true
+      @series.is_element_present?(title).should be_true
     when 'Dynamic Row'
-      @dynamic.get_name_of_elements(title).should be_true
+      @dynamic.is_element_present?(title).should be_true
     when 'List Row'
-      @list_row.get_name_of_elements(title).should be_true
+      @list_row.is_element_present?(title).should be_true
     when 'Sci Fi'
-      @sci_fi.get_name_of_elements(title).should be_true
+      @sci_fi.is_element_present?(title).should be_true
+    when 'Arts'
+      @arts.is_element_present?(title).should be_true
   end
 end
 
@@ -76,6 +85,8 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
       @list_row.is_image_present(title).should be_true
     when 'Sci Fi'
       @sci_fi.is_image_present(title).should be_true
+    when 'Arts'
+      @arts.is_image_present(title).should be_true
   end
 end
 
@@ -90,6 +101,8 @@ Then /^I want to get array of movie names for (.*?) and check if it contains "(.
       @list_row.get_movie_names.should include(name)
     when 'Sci Fi'
       @sci_fi.get_movie_names.should include(name)
+    when 'Arts'
+      @arts.get_movie_names.should include(name)
   end
 end
 

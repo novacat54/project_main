@@ -28,7 +28,7 @@ class AllRows
     return Capybara.page.should have_selector(:xpath, image_xpath)
   end
 
-  def get_name_of_elements(name)
+  def is_element_present?(name)
     return Capybara.page.should have_selector(:xpath, "#{@name_element_xpath}[descendant-or-self::*[contains(@title,'#{name}')]]")
   end
 
