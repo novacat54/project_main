@@ -36,6 +36,13 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
     when 'Arts'
       @arts=Arts.new
       @arts.number_of_items.should == number.to_i
+
+    when 'Reality Teasers'
+      @reality.number_of_items.should == number.to_i
+
+    when 'Game Shows Teasers'
+      @game_shows.number_of_items.should == number.to_i
+
   end
 end
 
@@ -57,6 +64,12 @@ Then /^I should see "(.*?)" on the page$/ do |name|
     when 'Arts'
       @arts=Arts.new
       @arts.content_title
+    when 'Reality'
+      @reality=Reality.new
+      @reality.content_title
+    when 'Game Shows'
+      @game_shows=GameShows.new
+      @game_shows.content_title
   end
 end
 
@@ -72,6 +85,10 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
       @sci_fi.is_element_present?(title).should be_true
     when 'Arts'
       @arts.is_element_present?(title).should be_true
+    when 'Reality'
+      @reality.is_element_present?(title).should be_true
+    when 'Game Shows'
+      @game_shows.is_element_present?(title).should be_true
   end
 end
 
@@ -87,6 +104,10 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
       @sci_fi.is_image_present(title).should be_true
     when 'Arts'
       @arts.is_image_present(title).should be_true
+    when 'Reality'
+      @reality.is_image_present(title).should be_true
+    when 'Game Shows'
+      @game_shows.is_image_present(title).should be_true
   end
 end
 
@@ -103,6 +124,10 @@ Then /^I want to get array of movie names for (.*?) and check if it contains "(.
       @sci_fi.get_movie_names.should include(name)
     when 'Arts'
       @arts.get_movie_names.should include(name)
+    when 'Reality'
+      @reality.get_movie_names.should include(name)
+    when 'Game Shows'
+      @game_shows.get_movie_names.should include(name)
   end
 end
 
