@@ -26,6 +26,9 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
     when 'List Row'
       @list_row.number_of_items.should == number.to_i
 
+    when 'Sci Fi'
+      @sci_fi.number_of_items.should == number.to_i
+
     when 'Hero Row'
       @hero=HeroRow.new
       @hero.number_of_items.should == number.to_i
@@ -44,6 +47,9 @@ Then /^I should see "(.*?)" on the page$/ do |name|
     when 'List Row'
       @list_row=ListRow.new
       @list_row.content_title
+    when 'Sci Fi'
+      @sci_fi=SciFi.new
+      @sci_fi.content_title
   end
 end
 
@@ -55,6 +61,8 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
       @dynamic.get_name_of_elements(title).should be_true
     when 'List Row'
       @list_row.get_name_of_elements(title).should be_true
+    when 'Sci Fi'
+      @sci_fi.get_name_of_elements(title).should be_true
   end
 end
 
@@ -66,6 +74,8 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
       @dynamic.is_image_present(title).should be_true
     when 'List Row'
       @list_row.is_image_present(title).should be_true
+    when 'Sci Fi'
+      @sci_fi.is_image_present(title).should be_true
   end
 end
 
@@ -78,6 +88,8 @@ Then /^I want to get array of movie names for (.*?) and check if it contains "(.
       @dynamic.get_movie_names.should include(name)
     when 'List Row'
       @list_row.get_movie_names.should include(name)
+    when 'Sci Fi'
+      @sci_fi.get_movie_names.should include(name)
   end
 end
 
