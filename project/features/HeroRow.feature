@@ -4,7 +4,7 @@ Feature: HeroRow
 
     Given opened "http://go.test.sp.bskyb.com/vod/content/SKYNEWS/content/default/promoPage.do" page
 
-    Then I should see 8 "Video" on the page
+    Then I should see 24 Hero Row on the page
     Then I should see the following tabs title on the Hero Row:
       | Showcase    |
       | Last Chance |

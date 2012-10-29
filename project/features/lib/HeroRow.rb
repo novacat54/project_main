@@ -1,14 +1,12 @@
-class HeroRow
-  include RSpec::Matchers
-  attr_accessor :all_names
-  def initialize
-    @elements_xpath = "//div[contains(@class, 'HeroRow')]"
-    @all_names = "#{@elements_xpath}//h3"
-  end
+require_relative 'AllRows'
 
-#counting a video on Hero Row
-  def number_of_items
-    counting_xpath="#{@element_xpath}/li[@class]"
+class HeroRow < AllRows
+  include RSpec::Matchers
+
+  def initialize
+    @main_xpath = "//div[@class= 'rowFrame']//li[contains(@class, 'slot smallSlot ATI')]"
+    @all_names = "#{@main_xpath}//h3"
+    @name_element_xpath = "#{@main_xpath}//h3"
   end
 
 #derived tab title name on Hero row

@@ -27,7 +27,8 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
       @list_row.number_of_items.should == number.to_i
 
     when 'Hero Row'
-      page.all(:xpath, @hero.number_of_items).length.should == number.to_i
+      @hero=HeroRow.new
+      @hero.number_of_items.should == number.to_i
   end
 end
 
