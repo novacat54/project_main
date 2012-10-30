@@ -41,25 +41,24 @@ Then /^I should see "(.*?)" on the page$/ do |name|
   case name
     when 'Series Selection Row'
       @series=SeriesSelectionRow.new
-      @series.content_title
+      page.has_xpath?(@series.main_xpath).should be_true
     when 'Dynamic Row'
       @dynamic=DynamicRow.new
-      @dynamic.content_title
+      page.has_xpath?(@dynamic.main_xpath).should be_true
     when 'List Row'
       @list_row=ListRow.new
-      @list_row.content_title
-    when 'Sci Fi'
-      @sci_fi=SciFi.new
-      @sci_fi.content_title
+      page.has_xpath?(@list_row.main_xpath).should be_true
     when 'Arts'
       @arts=Arts.new
-      @arts.content_title
+      page.has_xpath?(@arts.main_xpath).should be_true
     when 'Reality'
       @reality=Reality.new
-      @reality.content_title
+      page.has_xpath?(@reality.main_xpath).should be_true
     when 'Game Shows'
       @game_shows=GameShows.new
-      @game_shows.content_title
+      page.has_xpath?(@game_shows.main_xpath).should be_true
+    else
+      raise "No row types matches"
   end
 end
 
@@ -71,6 +70,8 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
       @dynamic.is_element_present?(title).should be_true
     when 'List Row'
       @list_row.is_element_present?(title).should be_true
+    else
+      raise "No row types matches"
   end
 end
 
@@ -82,6 +83,8 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
       @dynamic.is_image_present(title).should be_true
     when 'List Row'
       @list_row.is_image_present(title).should be_true
+    else
+      raise "No row types matches"
   end
 end
 
@@ -94,14 +97,14 @@ Then /^I want to get array of movie names for (.*?) and check if it contains "(.
       @dynamic.get_movie_names.should include(name)
     when 'List Row'
       @list_row.get_movie_names.should include(name)
-    when 'Sci Fi'
-      @sci_fi.get_movie_names.should include(name)
     when 'Arts'
       @arts.get_movie_names.should include(name)
     when 'Reality'
       @reality.get_movie_names.should include(name)
     when 'Game Shows'
       @game_shows.get_movie_names.should include(name)
+    else
+      raise 'No matches founded'
   end
 end
 

@@ -1,7 +1,7 @@
 class AllRows
 
   include RSpec::Matchers
-
+  attr_accessor :main_xpath
   def initialize
     @main_xpath = ''
     @all_names = ''
@@ -17,10 +17,6 @@ class AllRows
     movies = []
     Capybara.page.all(:xpath, @all_names).map { |element| movies << element[:title].strip }
     return movies
-  end
-
-  def content_title
-    Capybara.page.should have_selector(:xpath, @main_xpath)
   end
 
   def is_image_present(name)
