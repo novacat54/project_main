@@ -17,32 +17,22 @@ end
 
 Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
   case name
-    when 'Series Row'
+    when 'teasers in Series Row'
       @series.number_of_items.should == number.to_i
 
-    when 'Dynamic Row'
+    when 'teasers in Dynamic Row'
       @dynamic.number_of_items.should == number.to_i
 
-    when 'List Row'
+    when 'teasers in List Row'
+      @list_row=ListRow.new
       @list_row.number_of_items.should == number.to_i
-
-    when 'Sci Fi'
-      @sci_fi.number_of_items.should == number.to_i
 
     when 'Hero Row'
       @hero=HeroRow.new
       @hero.number_of_items.should == number.to_i
 
-    when 'Arts'
-      @arts=Arts.new
-      @arts.number_of_items.should == number.to_i
-
-    when 'Reality Teasers'
-      @reality.number_of_items.should == number.to_i
-
-    when 'Game Shows Teasers'
-      @game_shows.number_of_items.should == number.to_i
-
+    else
+      raise "No rows founded"
   end
 end
 
@@ -81,14 +71,6 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
       @dynamic.is_element_present?(title).should be_true
     when 'List Row'
       @list_row.is_element_present?(title).should be_true
-    when 'Sci Fi'
-      @sci_fi.is_element_present?(title).should be_true
-    when 'Arts'
-      @arts.is_element_present?(title).should be_true
-    when 'Reality'
-      @reality.is_element_present?(title).should be_true
-    when 'Game Shows'
-      @game_shows.is_element_present?(title).should be_true
   end
 end
 
@@ -100,14 +82,6 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
       @dynamic.is_image_present(title).should be_true
     when 'List Row'
       @list_row.is_image_present(title).should be_true
-    when 'Sci Fi'
-      @sci_fi.is_image_present(title).should be_true
-    when 'Arts'
-      @arts.is_image_present(title).should be_true
-    when 'Reality'
-      @reality.is_image_present(title).should be_true
-    when 'Game Shows'
-      @game_shows.is_image_present(title).should be_true
   end
 end
 
