@@ -27,6 +27,9 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
       @list_row=ListRow.new
       @list_row.number_of_items.should == number.to_i
 
+    when 'teasers in Hero Row T1'
+      @hero_t1.number_of_items.should == number.to_i
+
     when 'Hero Row'
       @hero=HeroRow.new
       @hero.number_of_items.should == number.to_i
@@ -48,6 +51,9 @@ Then /^I should see "(.*?)" on the page$/ do |name|
     when 'List Row'
       @list_row=ListRow.new
       page.has_xpath?(@list_row.main_xpath).should be_true
+    when 'Hero Row T1'
+      @hero_t1=HeroRowT1.new
+      page.has_xpath?(@hero_t1.main_xpath).should be_true
     else
       raise "No row types matches"
   end
@@ -61,6 +67,8 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
       @dynamic.is_element_present?(title).should be_true
     when 'List Row'
       @list_row.is_element_present?(title).should be_true
+    when 'Hero Row T1'
+      @hero_t1.is_element_present?(title).should be_true
     else
       raise "No row types matches"
   end
@@ -74,6 +82,8 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
       @dynamic.is_image_present(title).should be_true
     when 'List Row'
       @list_row.is_image_present(title).should be_true
+    when 'Hero Row T1'
+      @hero_t1.is_image_present(title).should be_true
     else
       raise "No row types matches"
   end
@@ -88,6 +98,8 @@ Then /^I want to get movie names for (.*?) and check if it contains "(.*?)"$/ do
       @dynamic.get_movie_names.should include(name)
     when 'List Row'
       @list_row.get_movie_names.should include(name)
+    when 'Hero Row T1'
+      @hero_t1.get_movie_names.should include(name)
     else
       raise 'No matches founded'
   end
