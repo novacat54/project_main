@@ -35,7 +35,7 @@ Then /^I should see (\d+) (.*?) on the page$/ do |number, name|
       @hero.number_of_items.should == number.to_i
 
     else
-      raise "No rows founded"
+      raise 'No rows found'
   end
 end
 
@@ -55,7 +55,7 @@ Then /^I should see "(.*?)" on the page$/ do |name|
       @hero_t1=HeroRowT1.new
       page.has_xpath?(@hero_t1.main_xpath).should be_true
     else
-      raise "No row types matches"
+      raise 'No row types matches'
   end
 end
 
@@ -70,7 +70,7 @@ Then /^I should see "(.*?)" content presented in (.*?)$/ do |title, row_type|
     when 'Hero Row T1'
       @hero_t1.is_element_present?(title).should be_true
     else
-      raise "No row types matches"
+      raise 'No row types matches'
   end
 end
 
@@ -85,7 +85,7 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
     when 'Hero Row T1'
       @hero_t1.is_image_present(title).should be_true
     else
-      raise "No row types matches"
+      raise 'No row types matches'
   end
 end
 
@@ -101,7 +101,7 @@ Then /^I want to get movie names for (.*?) and check if it contains "(.*?)"$/ do
     when 'Hero Row T1'
       @hero_t1.get_movie_names.should include(name)
     else
-      raise 'No matches founded'
+      raise 'No matches found'
   end
 end
 
