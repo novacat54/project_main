@@ -48,15 +48,6 @@ Then /^I should see "(.*?)" on the page$/ do |name|
     when 'List Row'
       @list_row=ListRow.new
       page.has_xpath?(@list_row.main_xpath).should be_true
-    when 'Arts'
-      @arts=Arts.new
-      page.has_xpath?(@arts.main_xpath).should be_true
-    when 'Reality'
-      @reality=Reality.new
-      page.has_xpath?(@reality.main_xpath).should be_true
-    when 'Game Shows'
-      @game_shows=GameShows.new
-      page.has_xpath?(@game_shows.main_xpath).should be_true
     else
       raise "No row types matches"
   end
@@ -89,7 +80,7 @@ Then /^I should see image for "(.*?)" content in (.*?)$/ do |title, name|
 end
 
 
-Then /^I want to get array of movie names for (.*?) and check if it contains "(.*?)"$/ do |row_type, name|
+Then /^I want to get movie names for (.*?) and check if it contains "(.*?)"$/ do |row_type, name|
   case row_type
     when 'Series Selection Row'
       @series.get_movie_names.should include(name)
@@ -97,12 +88,6 @@ Then /^I want to get array of movie names for (.*?) and check if it contains "(.
       @dynamic.get_movie_names.should include(name)
     when 'List Row'
       @list_row.get_movie_names.should include(name)
-    when 'Arts'
-      @arts.get_movie_names.should include(name)
-    when 'Reality'
-      @reality.get_movie_names.should include(name)
-    when 'Game Shows'
-      @game_shows.get_movie_names.should include(name)
     else
       raise 'No matches founded'
   end
