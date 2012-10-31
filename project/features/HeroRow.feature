@@ -5,11 +5,11 @@ Feature: HeroRow
     Given opened "http://go.test.sp.bskyb.com/vod/content/SKYNEWS/content/default/promoPage.do" page
 
     Then I should see 24 Hero Row on the page
-    Then I should see the following tabs title on the Hero Row:
+    Then I should see the following tabs titles on the Hero Row:
       | Showcase    |
       | Last Chance |
       | Watch Live  |
-    Then I should see scroll buttons on the Hero Row:
+    Then I should see scroll buttons for the Hero Row:
       |Scroll left|
       |Scroll right|
     Then I should see view more content present on the Hero Row:

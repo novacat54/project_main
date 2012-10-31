@@ -72,9 +72,9 @@ Then /^I should see image for "(.*?)" movie in (.*?)$/ do |title, name|
     when 'List Row'
       @list_row.is_image_present?(title).should be_true
     when 'Hero Row T1'
-      @hero_t1.is_image_present(title).should be_true
+      @hero_t1.is_image_present?(title).should be_true
     when 'Generic Promo Row'
-      @generic_promo.is_image_present(title).should be_true
+      @generic_promo.is_image_present?(title).should be_true
     else
       raise 'No row types matches'
   end
@@ -117,7 +117,7 @@ Then /^I should see scroll buttons for the (.*?):$/ do |name, table|
   end
 end
 
-Then /^I should see view more content presented on the (.*?):$/  do |name, table|
+Then /^I should see view more content present on the (.*?):$/  do |name, table|
   case name
     when "Hero Row"
       @hero=HeroRow.new

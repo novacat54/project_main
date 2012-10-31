@@ -8,8 +8,8 @@ Feature: ListRow
   #When I click "RegressionPack List Row (DO NOT TOUCH!)" link
     Then I should see "List Row" on the page
     Then I should see 4 teasers in List Row on the page
-    Then I want to get movie names for List Row and check if it contains "REG-Sri Lanka v Pakistan"
+    Then List Row should contain "REG-Sri Lanka v Pakistan" movie
     Then I should see "REG-Sri Lanka v Pakistan" content present in List Row
-    Then I should see image for "REG-Sri Lanka v Pakistan" content in List Row
+    Then I should see image for "REG-Sri Lanka v Pakistan" movie in List Row
 
 
