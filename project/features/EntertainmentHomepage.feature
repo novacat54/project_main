@@ -7,8 +7,8 @@ Feature: Testing Entertainment homepage
     Then I should see "Hero Row T1" on the page
     Then I should see 20 teasers in Hero Row T1 on the page
     Then Hero Row T1 should contain "Stargate Universe Season 2" movie
-#    Then I should see "Modern Family Season 2" content present in Hero Row T1
-#    Then I should see image for "Stargate Universe Season 2" movie in Hero Row T1
+    Then I should see "Modern Family Season 2" content present in Hero Row T1
+    Then I should see image for "Stargate Universe Season 2" movie in Hero Row T1
 
     Then I should see "List Row" on the page
     Then I should see 16 teasers in List Row on the page

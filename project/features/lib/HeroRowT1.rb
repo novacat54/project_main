@@ -22,8 +22,8 @@ class HeroRowT1 < AllRows
     return Capybara.page.should have_selector(:xpath, "#{@movie_name_xpath}[descendant-or-self::*[contains(text(),'#{name}')]]")
   end
 
-  def is_image_present(name)
-    image_xpath= "#{@movie_name_xpath}[descendant-or-self::*[contains(text(),'#{name}')]]/following-sibling::*[descendant-or-self::img]"
+  def is_image_present?(name)
+    image_xpath= "#{@movie_name_xpath}[descendant-or-self::*[contains(text(),'#{name}')]]/*[descendant-or-self::img]"
     return Capybara.page.should have_selector(:xpath, image_xpath)
   end
 end
