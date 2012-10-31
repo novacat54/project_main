@@ -9,8 +9,8 @@ class AllRows
   end
 
   def number_of_items
-    @number_of_items="#{@main_xpath}/div[@class]"
-    Capybara.page.all(:xpath, @number_of_items).length
+    @number_of_items="#{@main_xpath}/div[contains(@class, 'promoItem')]"
+    return Capybara.page.all(:xpath, @number_of_items).length
   end
 
   def get_movie_names
@@ -19,7 +19,7 @@ class AllRows
     return movies
   end
 
-  def is_image_present(name)
+  def is_image_present?(name)
     image_xpath= "#{@name_element_xpath}[descendant-or-self::*[contains(@title,'#{name}')]]/preceding-sibling::*[descendant-or-self::img]"
     return Capybara.page.should have_selector(:xpath, image_xpath)
   end

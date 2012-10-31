@@ -7,7 +7,7 @@ Feature: Testing Series Selection Row
     Then I should see "Series Selection Row" on the page
     Then I should see 7 teasers in Series Row on the page
     Then I want to get array of movie names for Series Selection Row and check if it contains "Sel Disney Jr Series2"
-    Then I should see "Sel Cartoon Network Series1" content presented in Series Selection Row
+    Then I should see "Sel Cartoon Network Series1" content present in Series Selection Row
     Then I should see image for "Sel Cartoon Network Series1" content in Series Selection Row
     When I click "Jungle Bunnies" link
     Then I should see "Jungle Bunnies" page

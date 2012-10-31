@@ -12,7 +12,7 @@ Feature: HeroRow
     Then I should see scroll buttons on the Hero Row:
       |Scroll left|
       |Scroll right|
-    Then I should see view more content presented on the Hero Row:
+    Then I should see view more content present on the Hero Row:
       |View more HARDtalk                       |
       |View more Click                          |
       |View more Sky World News                 |

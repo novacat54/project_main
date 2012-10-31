@@ -1,5 +1,6 @@
 class HeroRowT1 < AllRows
   def initialize
+    #TODO: it's not main xpath, it's tabs_xpath
     @main_xpath = "//div[contains(@id, 'heroRow1')]//li[@id='heroRow1tab1']//ul[@class='tabContent']"
     @all_names = "#{@main_xpath}//p[@class='slotDetailsTitle']"
     @name_element_xpath= "#{@main_xpath}//h3"

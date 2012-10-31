@@ -7,7 +7,7 @@ Feature: Testing open web page
     Then I should see "Dynamic Row" on the page
     Then I should see 12 teasers in Dynamic Row on the page
     Then I want to get movie names for Dynamic Row and check if it contains "24/24 Rule"
-    Then I should see "Crimes That Shook Britain : Beverley Allitt" content presented in Dynamic Row
+    Then I should see "Crimes That Shook Britain : Beverley Allitt" content present in Dynamic Row
     Then I should see image for "Crimes That Shook Britain : Beverley Allitt" content in Dynamic Row
 
 

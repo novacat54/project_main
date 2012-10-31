@@ -4,6 +4,7 @@ class HeroRow < AllRows
   include RSpec::Matchers
 
   def initialize
+    #TODO:   //li[contains(@class, 'slot smallSlot ATI')] should have one class, not three
     @main_xpath = "//div[@class= 'rowFrame']//li[contains(@class, 'slot smallSlot ATI')]"
     @all_names = "#{@main_xpath}//h3"
     @name_element_xpath = "#{@main_xpath}//h3"
