@@ -1,7 +1,7 @@
 
-Feature: Testing Series Selection Row
+Feature: TC1004 Series Selection Row
 
-  Scenario: Opening page, and trying to find the elements
+  Scenario: Checking Series Selection Row content
 
     Given opened "http://go.test.sp.bskyb.com/vod/content/SKYKIDS/Browse_by_Genre/RegressionPack_Series_Selection_Row_%28DO_NOT_TOUCH!%29/content/default/promoPage.do" page
     Then I should see "Series Selection Row" on the page

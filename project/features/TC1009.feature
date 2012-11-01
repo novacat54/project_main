@@ -1,7 +1,7 @@
 
-Feature: Entertainment Reality
+Feature: TC1009 Entertainment Reality
 
-  Scenario: Opening page and check elements
+  Scenario: Checking Reality content
 
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYENTERTAINMENT/Browse_by_Genre/Reality/content/default/promoPage.do" page
     Then I should see "List Row" on the page

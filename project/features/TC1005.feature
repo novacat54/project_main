@@ -1,5 +1,7 @@
-Feature: Entertainment Arts
-  Scenario: open web site and check Arts page
+
+Feature: ТС1005 Entertainment - Arts
+
+  Scenario: Checking Entertainment Arts content
 
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYENTERTAINMENT/Browse_by_Genre/Arts/content/default/promoPage.do" page
     Then I should see "List Row" on the page

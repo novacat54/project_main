@@ -1,5 +1,7 @@
-Feature: ListRow
-  Scenario: open web site and check List row
+
+Feature: TC1003 ListRow
+
+  Scenario: Checking List Row content
 
     Given opened "http://go.test.sp.bskyb.com/vod/content/SKYENTERTAINMENT/Browse_by_Genre/RegressionPack_List_Row_%28DO_NOT_TOUCH!%29/content/default/promoPage.do" page
   #When I click "On Demand" link

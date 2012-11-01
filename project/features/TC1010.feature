@@ -1,5 +1,7 @@
-Feature: Entertainment SciFi
-  Scenario: open web site and check Sci-Fi page
+
+Feature: TC1010 Entertainment SciFi
+
+  Scenario: Checking Sci Fi content
 
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYENTERTAINMENT/Browse_by_Genre/Sci_Fi/content/default/promoPage.do" page
     Then I should see "List Row" on the page

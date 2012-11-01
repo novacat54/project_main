@@ -1,6 +1,7 @@
-Feature: Testing Entertainment Drama
 
-  Scenario: Checking Entertainment Drama page content presence
+Feature: TC1006 Entertainment Drama
+
+  Scenario: Checking Entertainment Drama content
 
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYENTERTAINMENT/Browse_by_Genre/Drama/content/default/promoPage.do" page
     When I should see "List Row" on the page

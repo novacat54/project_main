@@ -1,6 +1,7 @@
-Feature: Entertainment Game Shows
 
-  Scenario: Opening page and check elements
+Feature: TC1007 Entertainment Game Shows
+
+  Scenario: Checking Game Shows content
 
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYENTERTAINMENT/Browse_by_Genre/Game_Shows/content/default/promoPage.do" page
     Then I should see "List Row" on the page

@@ -1,6 +1,7 @@
-Feature: Testing Entertainment homepage
 
-  Scenario: Checking Entertainment home page content presence
+Feature: TC1008 Entertainment Homepage
+
+  Scenario: Checking Entertainment homepage content
 
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYENTERTAINMENT/content/default/promoPage.do" page
 
