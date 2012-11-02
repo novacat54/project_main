@@ -105,6 +105,8 @@ Then /^I should see the following tabs titles on the (.*?):$/ do |name, table|
         @hero=HeroRow.new
         @hero.content_title.should include(title.join)
       end
+    else
+      raise 'No matches found'
   end
 end
 
@@ -114,6 +116,8 @@ Then /^I should see scroll buttons for the (.*?):$/ do |name, table|
       table.raw.each do |title|
         @hero.scroll_button.should include(title.join)
       end
+    else
+      raise 'No matches found'
   end
 end
 
@@ -124,6 +128,8 @@ Then /^I should see view more content present on the (.*?):$/  do |name, table|
       table.raw.each do |title|
         @hero.get_movies.should include(title.join)
       end
+    else
+      raise 'No matches found'
   end
 end
 

@@ -14,13 +14,13 @@ Feature: TC1002 HeroRow
       |Scroll left|
       |Scroll right|
     Then I should see view more content present on the Hero Row:
-      |View more HARDtalk                       |
-      |View more Click                          |
-      |View more Sky World News                 |
-      |View more Question Time                  |
-      |View more Panorama                       |
-      |View more Series-2012091245              |
-      |View more Bolton &amp; Co-201209140903   |
+      |HARDtalk                       |
+      |Click                          |
+      |Sky World News                 |
+      |Question Time                  |
+      |Panorama                       |
+      |Series-2012091245              |
+      |Bolton & Co-201209140903       |
 
 
 
