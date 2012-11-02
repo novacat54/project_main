@@ -133,3 +133,16 @@ Then /^I should see view more content present on the (.*?):$/  do |name, table|
   end
 end
 
+Then /^(\d+) (.*?) should be presented on page$/ do |number, row_type|
+  case row_type
+    when 'Generic Promo Row'
+    @generic_promo.count_number_of_rows.should == number.to_i
+  end
+end
+
+Then /^(\d+) (.*?) should include (\d+) teasers$/ do |number_of_row, row_type, number_of_teasers|
+  case row_type
+    when "Generic Promo Row"
+    @generic_promo.number_of_items(number_of_row).should == number_of_teasers.to_i
+  end
+end
