@@ -24,3 +24,6 @@ Feature: TC1018 Movies - Modern Greats
     Then Top Downloads Row should contain "Catch Me If You Can" movie
     Then I should see "Catch Me If You Can" content present in Top Downloads Row
     Then I should see image for "Catch Me If You Can" movie in Top Downloads Row
+
+    Then I should see "Copy Row" on the page
+    Then Copy Row should include text "Included as part of the relevant Sky TV"

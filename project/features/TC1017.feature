@@ -24,3 +24,6 @@ Feature: TC1017 Movies - Horror
     Then Top Downloads Row should contain "Case 39" movie
     Then I should see "Anamorph" content present in Top Downloads Row
     Then I should see image for "The Children" movie in Top Downloads Row
+
+    Then I should see "Copy Row" on the page
+    Then Copy Row should include text "Included as part of the relevant Sky TV or Sky Go Monthly Ticket subscription"

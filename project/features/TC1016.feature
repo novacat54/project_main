@@ -35,3 +35,6 @@ Feature: TC1016 Movies - Family
     Then Top Downloads Row should contain "Alice in Wonderland" movie
     Then I should see "Aliens in the Attic" content present in Top Downloads Row
     Then I should see image for "Coraline" movie in Top Downloads Row
+
+    Then I should see "Copy Row" on the page
+    Then Copy Row should include text "Free for Sky TV and Sky Player TV"
