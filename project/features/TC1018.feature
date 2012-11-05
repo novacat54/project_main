@@ -1,5 +1,5 @@
 
-Feature: TC1022 Movies - Modern Greats
+Feature: TC1018 Movies - Modern Greats
 
   Scenario: Checking Movies Modern Greats Content
 

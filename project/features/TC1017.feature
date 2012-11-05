@@ -1,5 +1,5 @@
 
-Feature: TC1022 Movies - Horror
+Feature: TC1017 Movies - Horror
 
   Scenario: Checking Movies Horror Content
 
