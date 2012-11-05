@@ -15,3 +15,11 @@ Feature: TC1015 Movies - Classics
     Then Generic Promo Row should contain "Goldfinger" movie
     Then I should see "Alice in Wonderland" content present in Generic Promo Row
     Then I should see image for "Billy Madison" movie in Generic Promo Row
+
+    Then I should see "Series Selection Row" on the page
+    Then I should see 4 teasers in Series Row on the page
+    Then Series Selection Row should contain "Charade" movie
+    Then I should see "Battle of the Bulge" content present in Series Selection Row
+    Then I should see image for "The Adventures of Robin Hood" movie in Series Selection Row
+    When I click "You Again" link
+    Then I should see "You Again" page
