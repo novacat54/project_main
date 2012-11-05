@@ -44,6 +44,9 @@ Then /^I should see "(.*?)" on the page$/ do |name|
     when 'Top Downloads Row'
       @top_downloads = TopDownloadsRow.new
       page.has_xpath?(@top_downloads.main_xpath).should be_true
+    when 'Copy Row'
+      @copy_row=CopyRow.new
+      page.has_xpath?(@copy_row.main_xpath).should be_true
     else
       raise 'No row types matches'
   end
@@ -157,5 +160,12 @@ Then /^(\d+) (.*?) should include (\d+) teasers$/ do |number_of_row, row_type, n
     @generic_promo.number_of_items(number_of_row).should == number_of_teasers.to_i
     when 'Top Downloads Row'
     @top_downloads.number_of_items(number_of_row).should == number_of_teasers.to_i
+  end
+end
+
+Then /^(.*?) should include text "(.*?)"$/ do |row_type, text|
+  case row_type
+    when 'Copy Row'
+      @copy_row.text_inside_row(text).should be_true
   end
 end
