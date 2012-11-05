@@ -10,15 +10,6 @@ class GenericPromoRow < AllRows
   #  return movies
   #end
 
-  def number_of_items(number=1)
-    @number_of_items="#{@main_xpath}[#{number}]/div[contains(@class, 'promoItem')]"
-    return Capybara.page.all(:xpath, @number_of_items).length
-  end
-
-  def count_number_of_rows
-    Capybara.page.all(:xpath, @main_xpath).length
-  end
-
   def is_element_present?(name)
     return Capybara.page.should have_selector(:xpath, "#{@movie_name_xpath}[descendant-or-self::*[contains(text(),'#{name}')]]")
   end

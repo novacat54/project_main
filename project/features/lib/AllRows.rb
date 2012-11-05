@@ -8,9 +8,13 @@ class AllRows
     @movie_name_xpath = ''
   end
 
-  def number_of_items
-    @number_of_items="#{@main_xpath}/div[contains(@class, 'promoItem')]"
+  def number_of_items(number=1)
+    @number_of_items="#{@main_xpath}[#{number}]/div[contains(@class, 'promoItem')]"
     return Capybara.page.all(:xpath, @number_of_items).length
+  end
+
+  def count_number_of_rows
+    Capybara.page.all(:xpath, @main_xpath).length
   end
 
   def get_movie_names

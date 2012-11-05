@@ -41,6 +41,9 @@ Then /^I should see "(.*?)" on the page$/ do |name|
     when 'Generic Promo Row'
       @generic_promo=GenericPromoRow.new
       page.has_xpath?(@generic_promo.main_xpath).should be_true
+    when 'Top Downloads Row'
+      @top_downloads = TopDownloadsRow.new
+      page.has_xpath?(@top_downloads.main_xpath).should be_true
     else
       raise 'No row types matches'
   end
@@ -58,6 +61,8 @@ Then /^I should see "(.*?)" content present in (.*?)$/ do |title, row_type|
       @hero_t1.is_element_present?(title).should be_true
     when 'Generic Promo Row'
       @generic_promo.is_element_present?(title).should be_true
+    when 'Top Downloads Row'
+      @top_downloads.is_element_present?(title).should be_true
     else
       raise 'No row types matches'
   end
@@ -75,6 +80,8 @@ Then /^I should see image for "(.*?)" movie in (.*?)$/ do |title, name|
       @hero_t1.is_image_present?(title).should be_true
     when 'Generic Promo Row'
       @generic_promo.is_image_present?(title).should be_true
+    when 'Top Downloads Row'
+      @top_downloads.is_image_present?(title).should be_true
     else
       raise 'No row types matches'
   end
@@ -93,6 +100,8 @@ Then /^(.*?) should contain "(.*?)" movie$/ do |row_type, name|
       @hero_t1.get_movie_names.should include(name)
     when 'Generic Promo Row'
       @generic_promo.get_movie_names.should include(name)
+    when 'Top Downloads Row'
+      @top_downloads.get_movie_names.should include(name)
     else
       raise 'No matches found'
   end
@@ -137,12 +146,16 @@ Then /^(\d+) (.*?) should be presented on page$/ do |number, row_type|
   case row_type
     when 'Generic Promo Row'
     @generic_promo.count_number_of_rows.should == number.to_i
+    when 'Top Downloads Row'
+    @top_downloads.count_number_of_rows.should == number.to_i
   end
 end
 
 Then /^(\d+) (.*?) should include (\d+) teasers$/ do |number_of_row, row_type, number_of_teasers|
   case row_type
-    when "Generic Promo Row"
+    when 'Generic Promo Row'
     @generic_promo.number_of_items(number_of_row).should == number_of_teasers.to_i
+    when 'Top Downloads Row'
+    @top_downloads.number_of_items(number_of_row).should == number_of_teasers.to_i
   end
 end
