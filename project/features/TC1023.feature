@@ -1,5 +1,5 @@
 
-Feature: TC1022 Movies - Indie
+Feature: TC1023 Movies - Indie
 
   Scenario: Checking Movies Indie Content
 

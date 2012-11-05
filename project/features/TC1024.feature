@@ -1,5 +1,5 @@
 
-Feature: TC1022 Movies - Crime and Thriller
+Feature: TC1024 Movies - Crime and Thriller
 
   Scenario: Checking Movies Crime and Thriller Content
 
