@@ -16,3 +16,6 @@ Feature: TC1019 Movies Sky Movies 007
     Then Generic Promo Row should contain "Tomorrow Never Dies" movie
     Then I should see "The Living Daylights" content present in Generic Promo Row
     Then I should see image for "Dr No" movie in Generic Promo Row
+
+    Then I should see "Copy Row" on the page
+    Then Copy Row should include text "Included as part of the relevant Sky TV"

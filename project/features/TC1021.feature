@@ -28,3 +28,6 @@ Feature: TC1021 Movies Sci-Fi
     Then List Row should contain "Case 39" movie
     Then I should see "Adam" content present in List Row
     Then I should see image for "Stone of Destiny" movie in List Row
+
+    Then I should see "Copy Row" on the page
+    Then Copy Row should include text "Free for Sky TV and Sky Player TV customers"
