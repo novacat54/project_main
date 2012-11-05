@@ -16,6 +16,9 @@ Feature: TC1015 Movies - Classics
     Then I should see "Alice in Wonderland" content present in Generic Promo Row
     Then I should see image for "Billy Madison" movie in Generic Promo Row
 
+    Then I should see "Copy Row" on the page
+    Then Copy Row should include text "Free for Sky TV and Sky Player TV"
+
     Then I should see "Series Selection Row" on the page
     Then I should see 4 teasers in Series Row on the page
     Then Series Selection Row should contain "Charade" movie
