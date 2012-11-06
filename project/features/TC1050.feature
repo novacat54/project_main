@@ -1,4 +1,4 @@
-Feature: TC1050 Documentaries - Society & Civilization
+Feature: TC1050 Documentaries - Showbiz
 
   Scenario: Checking Documentaries  Society & Civilization content
 
