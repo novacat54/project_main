@@ -20,7 +20,7 @@ Feature: TC1029 Sports Boxing
     Then I should see "List Row" on the page
     Then I should see 2 teasers in List Row on the page
     Then List Row should contain "Frank Bruno: The Early Years" movie
-    Then I should see "British Boxing Heroes: Honeyghan v Vaca" content present in List Row
+    Then I should see "British Boxing Heroes: Richie Woodhall" content present in List Row
     Then I should see image for "Frank Bruno: The Early Years" movie in List Row
 
     Then I should see "Copy Row" on the page

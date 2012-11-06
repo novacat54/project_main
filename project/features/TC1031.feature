@@ -1,4 +1,4 @@
-Feature: TC1021 Sports Features
+Feature: TC1031 Sports Features
 
   Scenario: Checking Sports Features content
 
