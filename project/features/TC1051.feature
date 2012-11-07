@@ -13,6 +13,6 @@ Feature: TC1051 Kids - Homepage
 
     Then I should see "List Row" on the page
     Then I should see 14 teasers in List Row on the page
-    Then List Row should contain "Dani's House: Series Four : One Small Step For Sam" movie
-    Then I should see "Abadas : Icicle" content present in List Row
-    Then I should see image for "The Rhyme Rocket : Music" movie in List Row
+    Then List Row should contain "Abadas : Cloud" movie
+    Then I should see "Numtums : Number Five" content present in List Row
+    Then I should see image for "The Rhyme Rocket : Transport" movie in List Row

@@ -6,8 +6,8 @@ Feature: TC1053 Kids - Adventure
 
     Then I should see "List Row" on the page
     Then I should see 10 teasers in List Row on the page
-    Then List Row should contain "Deadly 60: Series Three" movie
-    Then I should see "Deadly 60: Series Three" content present in List Row
+    Then List Row should contain "Blue Peter" movie
+    Then I should see "Abadas" content present in List Row
     Then I should see image for "Alphablocks: Series 2" movie in List Row
 
     Then I should see "Copy Row" on the page

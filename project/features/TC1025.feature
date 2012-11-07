@@ -21,8 +21,8 @@ Feature: TC1025 Sports - Homepage
     Then 1 Generic Promo Row should be presented on page
     Then 1 Generic Promo Row should include 4 teasers
     Then Generic Promo Row should contain "The Football League Show: 2012/2013" movie
-    Then I should see "Rugby League Autumn Internationals: 2012" content present in Generic Promo Row
-    Then I should see image for "See Hear: Series 32" movie in Generic Promo Row
+    Then I should see "Match of the Day: 2012/2013" content present in Generic Promo Row
+    Then I should see image for "Tennis: World Tour Finals: 2012" movie in Generic Promo Row
 
     Then I should see "Copy Row" on the page
     Then Copy Row should include text "Included as part of the relevant Sky TV"

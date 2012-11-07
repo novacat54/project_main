@@ -8,7 +8,7 @@ Feature: TC1058 Kids - Factual
     Then Copy Row should include text "*Included as part of the relevant Sky TV or Sky Go Monthly Ticket subscription."
 
     Then I should see "List Row" on the page
-    Then I should see 13 teasers in List Row on the page
+    Then I should see 12 teasers in List Row on the page
     Then List Row should contain "Blue Peter" movie
     Then I should see "Hero Squad" content present in List Row
     Then I should see image for "Project Parent" movie in List Row

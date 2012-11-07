@@ -4,12 +4,12 @@ Feature: TC1030 Sports - Darts
 
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYSPORTS/Browse_by_Genre/Darts/content/default/promoPage.do" page
 
-    Then I should see "Top Downloads Row" on the page
-    Then 1 Top Downloads Row should be presented on page
-    Then 1 Top Downloads Row should include 4 teasers
-    Then Top Downloads Row should contain "Taylor v Wade" movie
-    Then I should see "Lewis v Jenkins" content present in Top Downloads Row
-    Then I should see image for "Game 1" movie in Top Downloads Row
+    Then I should see "Series Selection Row" on the page
+    Then 1 Series Selection Row should be presented on page
+    Then 1 Series Selection Row should include 4 teasers
+    Then Series Selection Row should contain "Taylor v Wade" movie
+    Then I should see "Lewis v Jenkins" content present in Series Selection Row
+    Then I should see image for "Game 1" movie in Series Selection Row
 
     Then I should see "Generic Promo Row" on the page
     Then 2 Generic Promo Row should be presented on page

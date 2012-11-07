@@ -9,6 +9,6 @@ Feature: TC1060 Kids - Pre-school
 
     Then I should see "List Row" on the page
     Then I should see 10 teasers in List Row on the page
-    Then List Row should contain "Dani's House: Series Four : One Small Step For Sam" movie
-    Then I should see "Alphablocks: Series 2 : Taps" content present in List Row
-    Then I should see image for "The Lingo Show : Balancing Bug" movie in List Row
+    Then List Row should contain "Numtums : Number Five" movie
+    Then I should see "Alphablocks: Series 2 : In" content present in List Row
+    Then I should see image for "The Lingo Show : Ice Cream Queso" movie in List Row

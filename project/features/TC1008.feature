@@ -19,6 +19,6 @@ Feature: TC1008 Entertainment Homepage
 
     Then I should see "Generic Promo Row" on the page
     Then I should see 4 teasers in Generic Promo Row on the page
-    Then Generic Promo Row should contain "Lilyhammer" movie
+    Then Generic Promo Row should contain "Holby City: Series 15" movie
     Then I should see "EastEnders" content present in Generic Promo Row
     Then I should see image for "EastEnders" movie in Generic Promo Row

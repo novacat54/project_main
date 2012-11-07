@@ -5,14 +5,14 @@ Feature: TC1044 News - Homepage
     Given opened "http://go.t1.sp.bskyb.com/vod/content/SKYNEWS/content/default/promoPage.do" page
     Then I should see "Hero Row T1" on the page
     Then I should see 26 teasers in Hero Row T1 on the page
-    Then Hero Row T1 should contain "Inside Out North East and Cumbria" movie
-    Then I should see "Sunday Politics North East and Cumbria" content present in Hero Row T1
+    Then Hero Row T1 should contain "Dateline London" movie
+    Then I should see "Look East - West" content present in Hero Row T1
 
     Then I should see "List Row" on the page
     Then I should see 16 teasers in List Row on the page
-    Then List Row should contain "Northern Ireland Assembly : 05/11/2012" movie
-    Then I should see "World Business Report : 06/11/2012" content present in List Row
-    Then I should see image for "Inside Out South East : 05/11/2012" movie in List Row
+    Then List Row should contain "Spotlight : 06/11/2012" movie
+    Then I should see "BBC Points West : 06/11/2012" content present in List Row
+    Then I should see image for "South Today : 06/11/2012" movie in List Row
 
     Then I should see "Generic Promo Row" on the page
     Then 1 Generic Promo Row should be presented on page

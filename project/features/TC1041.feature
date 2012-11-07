@@ -12,7 +12,7 @@ Feature: TC1041 News - Features
     Then Copy Row should include text "Included as part of the relevant Sky TV or Sky Go Monthly Ticket subscription."
 
     Then I should see "List Row" on the page
-    Then I should see 56 teasers in List Row on the page
+    Then I should see 58 teasers in List Row on the page
     Then List Row should contain "BBC Channel Islands News" movie
     Then I should see "East Midlands Today" content present in List Row
     Then I should see image for "Look North (North East and Cumbria)" movie in List Row

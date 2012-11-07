@@ -19,9 +19,9 @@ Feature: TC1029 Sports Boxing
 
     Then I should see "List Row" on the page
     Then I should see 2 teasers in List Row on the page
-    Then List Row should contain "Frank Bruno: The Early Years" movie
+    Then List Row should contain "British Boxing Heroes: Stracey v Lewis" movie
     Then I should see "British Boxing Heroes: Richie Woodhall" content present in List Row
-    Then I should see image for "Frank Bruno: The Early Years" movie in List Row
+    Then I should see image for "British Boxing Heroes: Stracey v Lewis" movie in List Row
 
     Then I should see "Copy Row" on the page
     Then Copy Row should include text "Free* for Sky TV and Sky Player TV customers"
